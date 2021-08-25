@@ -68,8 +68,13 @@ if (keypressed == '82') {
 }
 
 if (keypressed == '67') {
-    new_Image('unique.png');
+    new_Image('cloud.jpg');
     console.log("c");
+}
+
+    if (keypressed == '85') {
+        new_Image('unique.png');
+        console.log("u");
 }
 
 if (e.shiftKey == true && keypressed == '77') {
@@ -112,4 +117,41 @@ if (keypressed == '39') {
     console.log('right');
     right();
 }
+}
+
+function up() {
+   if (player_y >= 0) {
+
+    player_y = player_y - block_height;
+    console.log("block_height" + block_height +"player_y" + player_y);
+    canvas.remove(player_object);
+    player_update();
+   }
+}
+
+   function down() {
+       if (player_y <= 650) {
+
+        player_y = player_y + block_height;
+        console.log("block_height" + block_height + "player_y" + player_y);
+        canvas.remove(player_object);
+        player_update();
+       }
+   }
+
+   function left() {
+    if (player_x >= 0) {
+     player_x = player_x - block_width;
+     console.log("block_width" + block_width + "player_x" + player_x);
+     canvas.remove(player_object);
+     player_update();
+    }
+}
+function right() {
+    if (player_x <= 900) {
+     player_x = player_x + block_width;
+     console.log("block_width" + block_width + "player_x" + player_x);
+     canvas.remove(player_object);
+     player_update();
+    }
 }
